@@ -1,0 +1,336 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 21:56:45 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/03 22:01:07 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_ft(int *nbr)
+{
+	*nbr = 42;
+}
+
+// int	main(void)
+// {
+// 	int	a;
+
+// 	a = 0;
+// 	ft_ft(&a);
+// 	return (0);
+// }
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 22:02:22 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/07 12:13:30 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_ultimate_ft(int *********nbr)
+{
+	if (!*nbr || !**nbr || !***nbr || !****nbr || !*****nbr || !******nbr
+		|| !*******nbr || !********nbr || !*********nbr)
+		return ;
+	*********nbr = 42;
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	int a;
+	int *nbr1 = &a;
+	int **nbr2 = &nbr1;
+	int ***nbr3 = &nbr2;
+	int ****nbr4 = &nbr3;
+	int *****nbr5 = &nbr4;
+	int ******nbr6 = &nbr5;
+	int *******nbr7 = &nbr6;
+	int ********nbr8 = &nbr7;
+	int *********nbr9 = &nbr8;
+
+	ft_ultimate_ft(nbr9);
+
+	if (a == 42)
+		printf("OK\n");
+	return (0);
+}/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 22:16:59 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/05 08:51:31 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_swap(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+// #include <unistd.h>
+// int	main(void)
+// {
+// 	int	a;
+// 	int	b;
+
+// 	a = 42;
+// 	b = 24;
+// 	ft_swap(&a, &b);
+// 	if (a == 24 && b == 42)
+// 		write(1, "OK", 2);
+// 	return (0);
+// }
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 22:24:02 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/03 23:00:54 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_div_mod(int a, int b, int *div, int *mod)
+{
+	if (b != 0)
+	{
+		*div = a / b;
+		*mod = a % b;
+	}
+}
+
+// #include <unistd.h>
+// int	main(void)
+// {
+// 	int	a;
+// 	int	b;
+// 	int	div;
+// 	int	mod;
+//
+// 	a = 42;
+// 	b = 24;
+// 	ft_div_mod(a, b, &div, &mod);
+// 	if (div == 1 && mod == 18)
+// 		write(1, "OK", 2);
+// 	return (0);
+// }
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 22:31:46 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/03 23:00:38 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_ultimate_div_mod(int *a, int *b)
+{
+	int	tmp;
+
+	if (*b != 0)
+	{
+		tmp = *a;
+		*a = *a / *b;
+		*b = tmp % *b;
+	}
+}
+
+// #include <unistd.h>
+// int	main(void)
+// {
+// 	int	a;
+// 	int	b;
+//
+// 	a = 42;
+// 	b = 24;
+// 	ft_ultimate_div_mod(&a, &b);
+// 	if (a == 1 && b == 18)
+// 		write(1, "OK", 2);
+// 	return (0);
+// }
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/04 09:14:48 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/05 06:43:16 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
+}
+
+/*
+** int main(void)
+** {
+**     ft_putstr("String 42");
+** } 
+*//* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/04 09:28:36 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/04 09:39:36 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_strlen(char *str)
+{
+	int	lenght;
+
+	lenght = 0;
+	while (*str)
+	{
+		lenght++;
+		str++;
+	}
+	return (lenght);
+}
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int	len;
+
+// 	len = ft_strlen("Test");
+// 	printf("%d", len);
+// 	return (0);
+// }
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/04 09:41:20 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/04 22:43:41 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int	i;
+	int	tmp;
+
+	i = 0;
+	while (i < size / 2)
+	{
+		tmp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = tmp;
+		i++;
+	}
+}
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int	arr1[5];
+
+// 	arr1[0] = 0;
+// 	arr1[1] = 2;
+// 	arr1[2] = 4;
+// 	arr1[3] = 8;
+// 	arr1[4] = 10;
+// 	printf("%d, %d, %d, %d, %d\n", arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]);
+// 	ft_rev_int_tab(arr1, 5);
+// 	printf("%d, %d, %d, %d, %d\n", arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]);
+// }
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/04 12:45:35 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/05 08:52:50 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_swap(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+			{
+				ft_swap(tab + i, tab + j);
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int	arr1[6];
+
+// 	arr1[0] = 1;
+// 	arr1[1] = 9;
+// 	arr1[2] = 5;
+// 	arr1[3] = 10;
+// 	arr1[4] = -5;
+// 	arr1[5] = -5;
+// 	printf("%d, %d, %d, %d, %d, %d\n", arr1[0], arr1[1], arr1[2], arr1[3],
+// 		arr1[4], arr1[5]);
+// 	ft_sort_int_tab(arr1, 6);
+// 	printf("%d, %d, %d, %d, %d, %d\n", arr1[0], arr1[1], arr1[2], arr1[3],
+// 		arr1[4], arr1[5]);
+// }

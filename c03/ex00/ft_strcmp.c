@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmucwick <gmucwick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/06 15:52:51 by gmucwick          #+#    #+#             */
+/*   Updated: 2023/08/24 09:24:21 by gmucwick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	if (!s1 || !s2)
+		return (-1);
+	i = 0;
+	while (s1[i] && s2[i] && ((unsigned char)s1[i] == (unsigned char)s2[i]))
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+// #include <stdio.h>
+// #include <string.h>
+// int main(void)
+// {
+// 	char	*s1;
+// 	char	*s2;
+// 	char	*s3;
+
+// 	s1 = "Hello";
+// 	s2 = "Hello";
+// 	s3 = "Hello World";
+// 	printf("%d\n", ft_strcmp(s1, s2));
+// 	printf("%s\n", s1);
+// 	printf("%s\n", s2);
+// 	printf("%d\n", ft_strcmp(s1, s3));
+// 	printf("%d\n", strcmp(s1, s2));
+// 	printf("%d\n", strcmp(s1, s3));
+
+// }
